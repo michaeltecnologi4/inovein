@@ -162,7 +162,7 @@ export default function Hero() {
                         }}
                     >
                         <Image
-                            src="/ipad.png"
+                            src="/Ipad.png"
                             alt="Mockup"
                             width={1600}
                             height={900}

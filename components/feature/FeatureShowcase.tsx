@@ -87,7 +87,7 @@ export default function FeatureShowcase() {
                         className="rounded-2xl overflow-hidden shadow-2xl"
                     >
                         <Image
-                            src="/ipad.png"
+                            src="/Ipad.png"
                             alt="Imagem ilustrativa"
                             width={800}
                             height={600}
