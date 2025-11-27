@@ -143,7 +143,7 @@ export default function Hero() {
                 transition={{ delay: 0.8, duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
                 <motion.div
-                    className="rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl"
+                    className="rounded-2xl md:rounded-3xl overflow-hidden"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.4 }}
                 >
@@ -175,7 +175,7 @@ export default function Hero() {
 
             {/* Base estilizada animada */}
             <motion.div
-                className="absolute left-1/2 -translate-x-1/2 bottom-[8vh] md:bottom-[12vh] w-[85%] md:w-[90%] max-w-7xl h-[100px] md:h-[140px] bg-[#8E9C78] rounded-[30px] md:rounded-[40px] z-10 shadow-xl"
+                className="absolute left-1/2 -translate-x-1/2 bottom-[8vh] md:bottom-[7vh] w-[85%] md:w-[90%] max-w-7xl h-[100px] md:h-[300px] bg-[#8E9C78] rounded-[30px] md:rounded-[40px] z-10 shadow-xl"
                 initial={{ opacity: 0, y: 50, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 1.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
