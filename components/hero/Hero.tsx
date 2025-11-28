@@ -31,13 +31,13 @@ const AnimatedGridBackground = () => (
                         "radial-gradient(circle at center, rgba(72,92,17,0.12) 0%, rgba(142,156,120,0.1) 40%, transparent 70%)",
                 }}
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.4, delay: 0.3 }}
                 animate={{
+                    opacity: 1,
                     x: ["0%", "6%", "0%"],
                     y: ["0%", "6%", "0%"],
                     rotate: [0, 180, 360],
                 }}
+                transition={{ duration: 1.4, delay: 0.3 }}
             />
         </motion.div>
 
