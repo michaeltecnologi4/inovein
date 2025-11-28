@@ -9,15 +9,15 @@ const navLinks = ["Início", "Serviços", "Projetos", "Sobre", "Contato"];
 export default function Navbar() {
     const [open, setOpen] = useState(false);
 
-    // Cor de fundo do botão
-    const buttonBgColor = "bg-[#485C11]"; // Cor #485C11
+    // Nova cor do botão dentro da paleta
+    const buttonBgColor = "bg-[#3A3B3B]";
+    const buttonHover = "hover:bg-[#2A2B2B]";
 
     return (
-        // 1. Fundo branco, sem blur. Borda inferior preta
-        <nav className="fixed top-0 left-0 w-full z-50 bg-white text-black border-b border-gray-200">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-white text-black border-b border-gray-300">
             <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-                {/* Branding (Lado Esquerdo) */}
+                {/* Branding */}
                 <motion.h1
                     className="text-xl md:text-2xl font-semibold uppercase tracking-wider text-black select-none flex items-center"
                     initial={{ opacity: 0, x: -10 }}
@@ -32,7 +32,6 @@ export default function Navbar() {
                         transition={{ delay: 0.4 }}
                     >
                         in
-                        {/* Cor da linha inferior do branding mudada para preta */}
                         <motion.span
                             className="absolute left-0 bottom-[-2px] h-[2px] bg-black"
                             initial={{ width: 0 }}
@@ -42,15 +41,13 @@ export default function Navbar() {
                     </motion.span>
                 </motion.h1>
 
-                {/* Desktop Menu (Centralizado) */}
-                {/* 2. e 3. Alteração para centralizar os links e colocar o botão à direita */}
-                <div className="hidden md:flex flex-1 justify-center mx-10"> {/* flex-1 para ocupar o espaço */}
+                {/* Desktop Menu */}
+                <div className="hidden md:flex flex-1 justify-center mx-10">
                     <div className="flex items-center gap-10">
                         {navLinks.map((link) => (
                             <motion.span
                                 key={link}
-                                // Texto em preto. Cor da linha inferior mudada para preta
-                                className="relative text-black font-medium cursor-pointer hover:text-gray-700 transition"
+                                className="relative text-black font-medium cursor-pointer transition hover:text-gray-600"
                                 initial={{ opacity: 0, y: -4 }}
                                 animate={{ opacity: 1, y: 0 }}
                             >
@@ -60,19 +57,52 @@ export default function Navbar() {
                         ))}
                     </div>
                 </div>
-
-                {/* Botão (Lado Direito) */}
-                <div className="hidden md:flex">
+                <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+                    whileHover={{ scale: 1.06, y: -2 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="relative group"
+                >
                     <Button
-                        // 4. Cor de fundo do botão para #485C11
-                        className={`${buttonBgColor} text-white hover:bg-[#394B0D] border border-transparent px-5 py-2 rounded-xl shadow-sm`}
+                        className={`${buttonBgColor} text-white ${buttonHover} px-5 py-2 rounded-xl shadow-sm relative overflow-hidden`}
                     >
-                        Fale Conosco
+                        {/* Texto */}
+                        <span className="relative z-20">Fale Conosco</span>
+
+                        {/* GRADIENTE EM MOVIMENTO */}
+                        <motion.div
+                            initial={{ x: "-100%" }}
+                            animate={{ x: ["-100%", "100%"] }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 2.5,
+                                ease: "linear",
+                            }}
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100"
+                        />
+
+                        {/* LUXO */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10" />
+
+                        {/* GLOW INTERNO */}
+                        <motion.div
+                            className="absolute inset-0 rounded-xl bg-white/10 blur-xl opacity-0 group-hover:opacity-100"
+                            transition={{ duration: 0.4 }}
+                        />
                     </Button>
-                </div>
+
+                    {/* Glow externo */}
+                    <motion.div
+                        className="absolute inset-0 rounded-xl bg-white/5 blur-2xl opacity-0 group-hover:opacity-100 pointer-events-none"
+                        transition={{ duration: 0.4 }}
+                    />
+                </motion.div>
 
 
-                {/* Mobile Menu Icon (Ícone em preto) */}
+
+                {/* Ícone Mobile */}
                 <button
                     className="md:hidden text-black text-3xl"
                     onClick={() => setOpen(!open)}
@@ -89,7 +119,6 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -12 }}
                         transition={{ duration: 0.25 }}
-                        // 5. Cor de fundo do menu mobile alterada para combinar com o botão. Texto em branco.
                         className={`${buttonBgColor} px-6 py-6 border-t border-white/20 md:hidden`}
                     >
                         <ul className="flex flex-col space-y-6 text-white text-lg">
@@ -104,8 +133,7 @@ export default function Navbar() {
                             ))}
                         </ul>
 
-                        {/* Botão no Mobile (Fundo branco para destaque) */}
-                        <Button className="w-full mt-6 bg-white text-gray-900 hover:bg-gray-100 border border-white/50 rounded-xl">
+                        <Button className="w-full mt-6 bg-white text-gray-900 cursor-pointer hover:bg-gray-100 border border-gray-300 rounded-xl">
                             Fale Conosco
                         </Button>
                     </motion.div>

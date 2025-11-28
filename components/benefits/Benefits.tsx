@@ -156,16 +156,6 @@ export default function Benefits() {
                     ))}
                 </motion.div>
 
-                {/* Banner */}
-                <motion.div
-                    className="mt-16 md:mt-24 lg:mt-32 w-full"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                >
-                    <BenefitsBanner />
-                </motion.div>
             </div>
         </section>
     );

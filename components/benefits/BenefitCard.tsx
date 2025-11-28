@@ -13,7 +13,7 @@ export function BenefitCard({ title, desc, delay = 0 }: any) {
             className="relative group h-full"
         >
             {/* Container da borda animada */}
-            <div className="relative p-[1.5px] rounded-3xl overflow-hidden bg-gradient-to-br from-[#485C11]/20 via-[#8E9C78]/30 to-[#485C11]/20 h-full">
+            <div className="relative p-[1.5px] rounded-3xl overflow-hidden bg-gradient-to-br from-[#8B8E8F]/20 via-[#CCC8C8]/30 to-[#8B8E8F]/20 h-full">
 
                 {/* Borda animada */}
                 <motion.div
@@ -27,15 +27,15 @@ export function BenefitCard({ title, desc, delay = 0 }: any) {
                     style={{
                         background: `conic-gradient(
                             from 0deg,
-                            #485C11 0deg,
-                            #485C11 45deg,
-                            #8E9C78 90deg,
-                            #8E9C78 135deg,
-                            #485C11 180deg,
-                            #485C11 225deg,
-                            #8E9C78 270deg,
-                            #8E9C78 315deg,
-                            #485C11 360deg
+                            #8B8E8F 0deg,
+                            #8B8E8F 45deg,
+                            #CCC8C8 90deg,
+                            #CCC8C8 135deg,
+                            #8B8E8F 180deg,
+                            #8B8E8F 225deg,
+                            #CCC8C8 270deg,
+                            #CCC8C8 315deg,
+                            #8B8E8F 360deg
                         )`,
                         opacity: 0.4,
                     }}
@@ -48,7 +48,7 @@ export function BenefitCard({ title, desc, delay = 0 }: any) {
                     <motion.div
                         className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                         style={{
-                            background: "radial-gradient(circle at 50% 0%, rgba(72, 92, 17, 0.04) 0%, transparent 70%)",
+                            background: "radial-gradient(circle at 50% 0%, rgba(58,59,59,0.05) 0%, transparent 70%)",
                         }}
                     />
 
@@ -62,7 +62,7 @@ export function BenefitCard({ title, desc, delay = 0 }: any) {
 
                             {/* Glow animado */}
                             <motion.div
-                                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#485C11] to-[#8E9C78] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
+                                className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3A3B3B] to-[#8B8E8F] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
                                 animate={{ scale: [1, 1.15, 1] }}
                                 transition={{
                                     duration: 2,
@@ -72,14 +72,14 @@ export function BenefitCard({ title, desc, delay = 0 }: any) {
                             />
 
                             {/* Ícone container */}
-                            <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#485C11]/10 via-[#8E9C78]/15 to-[#485C11]/10 flex items-center justify-center border border-[#485C11]/20 group-hover:border-[#485C11]/40 transition-all duration-300">
+                            <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-[#3A3B3B]/10 via-[#CCC8C8]/15 to-[#3A3B3B]/10 flex items-center justify-center border border-[#3A3B3B]/20 group-hover:border-[#3A3B3B]/40 transition-all duration-300">
                                 <motion.div
                                     initial={{ scale: 0 }}
                                     whileInView={{ scale: 1 }}
                                     transition={{ delay: delay + 0.2, type: "spring", stiffness: 200 }}
                                     viewport={{ once: true }}
                                 >
-                                    <FiCheck className="text-2xl text-[#485C11] group-hover:text-[#485C11] transition-colors duration-300" />
+                                    <FiCheck className="text-2xl text-[#3A3B3B] transition-colors duration-300" />
                                 </motion.div>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ export function BenefitCard({ title, desc, delay = 0 }: any) {
 
                     {/* Título */}
                     <motion.h3
-                        className="text-2xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#485C11] transition-colors duration-300"
+                        className="text-2xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#3A3B3B] transition-colors duration-300"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: delay + 0.1 }}

@@ -5,7 +5,8 @@ import Benefits from "@/components/benefits/Benefits";
 import Hero from "@/components/hero/Hero";
 import Navbar from "@/components/navbar/Navbar";
 import FeatureShowcase from "@/components/feature/FeatureShowcase";
-import TechCluster from "@/components/feature/TechCluster";
+import RecentProjects from "@/components/projects/RecentProjects";
+import BenefitsBanner from "@/components/benefits/BenefitsBanner";
 
 export default function Home() {
   useEffect(() => {
@@ -36,6 +37,16 @@ export default function Home() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <Benefits />
+          {/* Banner */}
+          <motion.div
+            className="mt-16 md:mt-24 lg:mt-32 w-full"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <BenefitsBanner />
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -45,6 +56,23 @@ export default function Home() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <FeatureShowcase />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <RecentProjects />
         </motion.div>
       </main>
     </div>
